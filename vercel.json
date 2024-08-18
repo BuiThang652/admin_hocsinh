@@ -8,23 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/baotran/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/hainam/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/minhduc/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/tranvan/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/tuanthanh/(.*)",
+      "src": "/(.*)",
       "dest": "/server.js"
     }
   ]
