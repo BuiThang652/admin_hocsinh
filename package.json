@@ -1,10 +1,16 @@
 {
-  "name": "json-server",
+  "name": "api_jsa37",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port $PORT"
+    "start": "json-server --watch db.json --port 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "json-server": "^0.17.0"
+    "json-server": "^1.0.0-beta.2"
   }
 }
