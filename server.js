@@ -3,50 +3,35 @@ const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 const fs = require("fs");
 
-// Function to load data from JSON files
-function loadData() {
-  let data = {};
-  const files = [
-    "baotran.json",
-    "hainam.json",
-    "minhduc.json",
-    "tranvan.json",
-    "tuanthanh.json",
-  ];
-  files.forEach((file) => {
-    try {
-      let content = JSON.parse(fs.readFileSync(file, "utf8"));
-      // Combine all files into one object, make sure the keys don't overlap
-      Object.keys(content).forEach((key) => {
-        if (data[key] === undefined) {
-          data[key] = [];
-        }
-        data[key] = data[key].concat(content[key]);
-      });
-    } catch (error) {
-      console.error(`Error loading or parsing file ${file}: ${error}`);
-    }
-  });
-  return data;
+// Function to load data from a specific JSON file
+function loadData(filename) {
+  try {
+    const content = JSON.parse(fs.readFileSync(filename, "utf8"));
+    return content;
+  } catch (error) {
+    console.error(`Error loading or parsing file ${filename}: ${error}`);
+    return {}; // Return an empty object if there's an error
+  }
 }
 
-const router = jsonServer.router(loadData()); // Use the loadData function to provide the data for the router
+// Setting up separate routers for each file
+const baotranRouter = jsonServer.router(loadData("baotran.json"));
+const tuanthanhRouter = jsonServer.router(loadData("tuanthanh.json"));
+const hainamRouter = jsonServer.router(loadData("hainam.json"));
+const minhducRouter = jsonServer.router(loadData("minhduc.json"));
+const tranvanRouter = jsonServer.router(loadData("tranvan.json"));
 
-// Rewrite rules for the base path
-const rules = jsonServer.rewriter({
-  "/api/baotran/*": "/baotran/$1",
-  "/api/hainam/*": "/hainam/$1",
-  "/api/minhduc/*": "/minhduc/$1",
-  "/api/tranvan/*": "/tranvan/$1",
-  "/api/tuanthanh/*": "/tuanthanh/$1",
-});
+// Apply middlewares
+server.use(middlewares);
 
-server.use(middlewares); // Use default middlewares (logger, static, cors and no-cache)
-server.use(rules); // Apply rewrite rules
-server.use(router); // Use the router
+// Route setup to serve the correct router for each path
+server.use("/api/baotran", baotranRouter);
+server.use("/api/tuanthanh", tuanthanhRouter);
+server.use("/api/hainam", hainamRouter);
+server.use("/api/minhduc", minhducRouter);
+server.use("/api/tranvan", tranvanRouter);
 
-// Use the environment variable PORT provided by Heroku
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
