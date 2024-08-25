@@ -1,1 +1,38 @@
-{}
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Bùi Đức Thắng",
+      "email": "buiducthang652@gmail.com",
+      "password": "123456789",
+      "phone": "0368795468",
+      "address": "Hà Nội",
+      "dateOfBirth": "05/06/1999"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "name",
+      "des": "Mô tả"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sản phẩm 1",
+      "des": "Mô tả",
+      "price": 13200,
+      "evaluate": [],
+      "total": 100
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "idProducts": [],
+      "time": "",
+      "idUser": 1
+    }
+  ]
+}
