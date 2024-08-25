@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "title": "Bùi đức thắng"
+    },
+    {
+      "id": 2,
+      "title": "Bùi đức thắng"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sản phẩm"
+    },
+    {
+      "id": 2,
+      "name": "Sản phẩm"
+    }
+  ]
+}

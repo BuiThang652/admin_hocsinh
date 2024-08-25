@@ -1,0 +1,8 @@
+{
+  "/api/tuanthanh": "/tuanthanh",
+  "/api/tuanthanh/:id": "/tuanthanh/users/:id",
+  "/api/minhduc": "/minhduc",
+  "/api/baotran": "/baotran",
+  "/api/tranvan": "/tranvan",
+  "/api/hainam": "/hainam"
+}
