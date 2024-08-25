@@ -45,6 +45,8 @@ server.use(middlewares); // Use default middlewares (logger, static, cors and no
 server.use(rules); // Apply rewrite rules
 server.use(router); // Use the router
 
-server.listen(3000, () => {
-  console.log("JSON Server is running on port 3000");
+// Use the environment variable PORT provided by Heroku
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
