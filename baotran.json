@@ -1,1 +1,24 @@
-{}
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Bùi Đức Thắng",
+      "dateOfBirth": "05/06/1999",
+      "password": "123456789",
+      "checkPermission": "ADMIN",
+      "email": "buiducthang652@gmail.com"
+    }
+  ],
+  "article": [
+    {
+      "id": 1,
+      "title": "Bài viết",
+      "des": "Mô tả",
+      "content": "Nội dung bài viết",
+      "tag": ["a", "b", "c"],
+      "createDateAt": "Ngày tạo bài viết",
+      "image": "https://....",
+      "idUser": 1
+    }
+  ]
+}
