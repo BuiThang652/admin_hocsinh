@@ -1,1 +1,50 @@
-{}
+{
+    "users": [
+        {
+            "id": 1,
+            "fullName": "Bùi Đức Thắng",
+            "password": "123456789",
+            "email": "buiducthang652@gmail.com",
+            "phone": "0368795468",
+            "dateOfBirth": "05/06/1999",
+            "address": "Hà Nội",
+            "class": "JSA37"
+        }
+    ],
+    "admin": [
+        {
+            "id": 1,
+            "fullName": "Bùi Đức Thắng",
+            "password": "123456789",
+            "email": "buiducthang652@gmail.com",
+        }
+    ],
+    "pointList": [
+        {
+            "id": 1,
+            "name": "Web Basic",
+            "point": null,
+            "idUser": 1
+        }
+    ],
+    "article": [
+        {
+            "id": 1,
+            "title": "Bài viết",
+            "img": "...",
+            "content": "Nội dung",
+            "createDateAt": "27/08/2024",
+            "updateDateAt": null,
+            "isVisible": false
+        }
+    ],
+    "message": [
+        {
+            "id": 1,
+            "code": "ABCD",
+            "idAuthor": 1,
+            "content": "Nội dung tin nhắn",
+            "createDateAt": "27/08/2024" 
+        }
+    ]
+}
