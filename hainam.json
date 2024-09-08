@@ -24,7 +24,8 @@
       "des": "Mô tả",
       "price": 13200,
       "evaluate": [],
-      "total": 100
+      "total": 100,
+      "categoryId": 1
     }
   ],
   "orders": [
